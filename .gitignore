@@ -23,3 +23,5 @@ tmp/*
 *.env
 *.pem
 frontend1/
+.umi/
+.cache/
