@@ -3,22 +3,37 @@ import axios from 'axios';
 import {
     message,
 } from "antd"
-axios.interceptors.response.use(result => result.data);
-axios.defaults.timeout = 10000
-axios.defaults.headers['Content-Type'] = 'appliction/json'; // x-www-form-urlencoded
-axios.defaults.transformRequest = (d={}) =>JSON.stringify(d)
-axios.defaults.validateStatus = function validateStatus(status) {
+
+
+//https://httpbin.org/get
+//https://httpbin.org/post
+
+const instance = axios.create({
+      baseURL: '/api/',
+      timeout: 1000,
+      //headers: {’X-Custom-Header’: ’foobar’}
+});
+
+
+instance.interceptors.response.use(result => result.data);
+instance.defaults.timeout = 10000
+instance.defaults.headers['Content-Type'] = 'appliction/json'; // x-www-form-urlencoded
+instance.defaults.transformRequest = (d={}) =>JSON.stringify(d)
+instance.defaults.validateStatus = function validateStatus(status) {
       return /^(2|3)\d{2}$/.test(status);
 };
-axios.interceptors.request.use(    
+instance.interceptors.request.use(    
     config => {        
-        const token =localStorage.token  //store.state.token;        
-        config.headers.token = token ?? "123456"
+        const token =localStorage.token  ?? "123456" //store.state.token;        
+        config.headers.token = token 
         return config;    
+    },err=>{
+        console.log(err)
+        return Promise.reject(error)
     }
 )
 
-axios.interceptors.response.use(    
+instance.interceptors.response.use(    
     response => {        
         if (response.status === 200) {            
             return Promise.resolve(response);        
@@ -58,16 +73,6 @@ axios.interceptors.response.use(
 );
 
 
-
-
-//httpbin.org/get
-//httpbin.org/post
-
-const instance = axios.create({
-      baseURL: '/api/',
-      timeout: 1000,
-      //headers: {’X-Custom-Header’: ’foobar’}
-});
 
 export {
   axios,

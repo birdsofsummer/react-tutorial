@@ -84,7 +84,7 @@ function save(c=""){
     .then(x=>{
         message.success("submit success")
     }).catch(e=>{
-        message.success("submit fail")
+        message.error("submit fail")
     })
 }
 
