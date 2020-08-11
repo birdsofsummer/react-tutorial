@@ -25,3 +25,4 @@ tmp/*
 frontend1/
 .umi/
 .cache/
+.umi-production/
