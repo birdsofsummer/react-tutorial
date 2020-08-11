@@ -131,7 +131,7 @@ const Wang=(props, ref)=>{
                 change(d)
             })
             .catch(e=>{
-                message.success("get article fail")
+                message.error("get article fail")
             })
 
     },[elem])
