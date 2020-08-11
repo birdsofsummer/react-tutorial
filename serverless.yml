@@ -1,0 +1,19 @@
+name: react-tutorial 
+
+frontend:
+  component: '@serverless/tencent-website'
+  # refer to: https://github.com/serverless-components/tencent-website/blob/master/docs/configure.md
+  inputs:
+    region: ${env.REGION}
+    bucketName: ${name}
+    protocol: https
+    code:
+      src: dist
+      root: frontend
+      hook: npm run build
+      envPath: src
+    env:
+      # get api url after below api service deployed.
+      #apiUrl: ${api.url}
+
+
