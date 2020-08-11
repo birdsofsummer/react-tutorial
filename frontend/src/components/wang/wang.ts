@@ -1,6 +1,6 @@
 const upload_url="/api/upload"
 const headers={
-   "token":123
+   "token":localStorage.token ?? "123456" 
 }
 const wang_config={
     lang: {
