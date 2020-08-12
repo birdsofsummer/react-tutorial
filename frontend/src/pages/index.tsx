@@ -69,9 +69,55 @@ import {
 }  from 'antd'
 
 
+import { DownOutlined } from '@ant-design/icons';
+
+
+
 import AddArticle from "./article/add"
 import ListUser from "./user/index"
 import {UpdateUser,AddUser} from "./user/add"
+
+
+
+const menu = (
+  <Menu>
+    <Menu.Item>
+      <a target="_blank" rel="noopener noreferrer" href="/user">
+         user 
+      </a>
+    </Menu.Item>
+
+    <Menu.Item>
+      <a target="_blank" rel="noopener noreferrer" href="/user/add">
+        add user 
+      </a>
+    </Menu.Item>
+
+
+    <Menu.Item>
+      <a target="_blank" rel="noopener noreferrer" href="/article">
+        article
+      </a>
+    </Menu.Item>
+
+    <Menu.Item>
+      <a target="_blank" rel="noopener noreferrer" href="/article/add">
+        add article
+      </a>
+    </Menu.Item>
+
+  </Menu>
+);
+
+
+
+const Menu1=()=>(
+  <Dropdown overlay={menu}>
+    <a className="ant-dropdown-link" onClick={e => e.preventDefault()}>
+      Router <DownOutlined />
+    </a>
+  </Dropdown>
+        )
 
 
 
@@ -118,11 +164,16 @@ const Pick=()=>{
 
 
 
+
+
+
 export default () => {
 
   return (
             <div>
                  <h1 className={styles.title}>hello</h1>
+
+              <Menu1 />
 
               <Pick />
               <Links />

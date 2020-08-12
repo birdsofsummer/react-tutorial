@@ -106,3 +106,81 @@ import {
 }  from "@/api/article"
 
 
+
+
+export default ()=>{
+    const [d, setd] = useState([]);
+
+        useEffect(()=>{
+                list().then(x=>{
+                     console.log("list article",x)
+                     setd(x.data)
+                })
+                .catch(e=>{
+                    message.error("???")
+                })
+         },[])
+
+        const columns = [
+          {
+            title: 'Id',
+            dataIndex: 'id',
+            key: 'id',
+            render: text => <a>{text}</a>,
+          },
+
+          {
+            title: 'Title',
+            dataIndex: 'title',
+            key: 'title',
+            render: text => <a>{text}</a>,
+          },
+          {
+            title: 'content',
+            dataIndex: 'content',
+            key: 'content',
+            render: text => <span>{text.slice(0,20)+"..."}</span>,
+          },
+          {
+            title: 'Action',
+            key: 'action',
+            render: (text, record) => (
+              <Space size="middle">
+
+
+              <a onClick={()=>{
+                  console.log("edit",text, record)
+
+
+              }}>Edit</a>
+
+
+              <a onClick={()=>{
+                  console.log("del",text, record)
+                  del(text.id).then(x=>{
+                      message.success("deleted")
+                      let d1=d.filter(x=>x.id!=text.id)
+                      setd(d1)
+                  })
+                  .catch(e=>{
+                      message.error("???")
+                 })
+
+              }}>Delete</a>
+
+
+              <a onClick={()=>{
+                  console.log("view",text, record)
+              }}>Show</a>
+
+
+
+              </Space>
+            ),
+          },
+        ];
+
+    return (
+        <Table columns={columns} dataSource={d} />
+    )
+}

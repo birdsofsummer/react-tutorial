@@ -22,14 +22,14 @@ export const add=async (c={})=> {
 }
 
 export const list=async ()=>{
-    instance.get('article/'+id)
+    instance.get('article')
     return {
         ok:true,
         data:[
-              {id:1,title:"1",content:"cccc"},
-              {id:2,title:"2",content:"cccc"},
-              {id:3,title:"3",content:"cccc"},
-              {id:4,title:"4",content:"cccc"},
+              {id:1,title:"1",content:"cccc1"},
+              {id:2,title:"2",content:"cccc2"},
+              {id:3,title:"3",content:"cccc3"},
+              {id:4,title:"4",content:"cccc4"},
         ],
         msg:"ok"
     }
