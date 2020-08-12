@@ -73,7 +73,6 @@ import AddArticle from "./article/add"
 import ListUser from "./user/index"
 import {UpdateUser,AddUser} from "./user/add"
 
-
 function onChange(date, dateString) {
       console.log(date, dateString);
       message.info(dateString)
@@ -82,28 +81,34 @@ function onChange(date, dateString) {
 export default () => {
 
   return (
-    <div>
-      <h1 className={styles.title}>hello</h1>
 
 
-      <ListUser />
+            <div>
+              <h1 className={styles.title}>hello</h1>
 
 
-      <Divider/>
-
-      <UpdateUser />
- 
-      <Divider/>
-      <AddArticle />
-
-      <Divider/>
+              <ListUser />
 
 
+              <Divider/>
 
-      <Space direction="vertical">
-        <DatePicker onChange={onChange} />
-      </Space>
+              <UpdateUser />
+         
+              <Divider/>
+              <AddArticle />
 
-    </div>
+              <Divider/>
+
+
+
+              <Space direction="vertical">
+                <DatePicker onChange={onChange} />
+              </Space>
+
+            </div>
+
+
+
+
   );
 }

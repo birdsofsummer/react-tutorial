@@ -121,7 +121,7 @@ export const userStore = observable({
 
   get_user(){
       return _.map(x=>this.data1[x],[...this.data])
-  }
+  },
 
   async list() {
       let d1=await user.list()
@@ -132,7 +132,7 @@ export const userStore = observable({
          this.data1[x.id]=x
       })
       return d2
-  }
+  },
 
   async add(d={}){
       let r=await user.add(d)
@@ -144,7 +144,7 @@ export const userStore = observable({
       }else{
 
       }
-  }
+  },
 
   async update(d={}){
       let r=await user.update(d)
@@ -153,7 +153,7 @@ export const userStore = observable({
       }else{
 
       }
-  }
+  },
 
   async del(id=0){
       user.del(id)
@@ -163,7 +163,7 @@ export const userStore = observable({
       .catch(e=>{
 
       })
-  }
+  },
 
 })
 

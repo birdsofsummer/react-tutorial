@@ -283,6 +283,7 @@ export const AddUser= (props)=>{
                   </Form.Item>
 
                   <Form.Item {...tailLayout}>
+
                           <Button type="primary" htmlType="submit"> Submit </Button>
                           <Button htmlType="button" onClick={onReset}> Reset </Button>
 
