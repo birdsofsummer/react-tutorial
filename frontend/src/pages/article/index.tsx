@@ -1,9 +1,9 @@
-import React from 'react';
-import styles from './index.less';
+import {Wang}  from "@/components/wang"
 
-import Add from "./article/add"
-
-
+import {
+    get_article,
+    add_article,
+}  from "@/api"
 
 import {
     Affix,
@@ -74,24 +74,33 @@ import {
 }  from 'antd'
 
 
-function onChange(date, dateString) {
-      console.log(date, dateString);
-      message.info(dateString)
+function add(c=""){
+    add_article({data:c})
+    .then(x=>{
+        message.success("submit success")
+    }).catch(e=>{
+        message.error("submit fail")
+    })
 }
 
-export default () => {
-
-  return (
-    <div>
-      <h1 className={styles.title}>hello</h1>
-
-      <Divider/>
-
-      <Add />
-      <Space direction="vertical">
-        <DatePicker onChange={onChange} />
-      </Space>
-
-    </div>
-  );
+function say(x=""){
+    console.log("father recv:",x)
 }
+
+const Add=()=>(
+      <Wang 
+        init={get_article}
+        save={add}
+        debug={true}
+        change={say}
+      />
+)
+
+
+
+
+
+
+
+
+export {Add}

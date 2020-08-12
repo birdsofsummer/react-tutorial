@@ -15,7 +15,6 @@ const instance = axios.create({
 });
 
 
-instance.interceptors.response.use(result => result.data);
 instance.defaults.timeout = 10000
 instance.defaults.headers['Content-Type'] = 'appliction/json'; // x-www-form-urlencoded
 instance.defaults.transformRequest = (d={}) =>JSON.stringify(d)
@@ -35,6 +34,13 @@ instance.interceptors.request.use(
 
 instance.interceptors.response.use(    
     response => {        
+        console.log(
+             response.config.method,
+             response.request.responseURL,
+             response.config,
+             response.status,
+             response.statusText,
+        )
         if (response.status === 200) {            
             return Promise.resolve(response);        
         } else {            
@@ -45,6 +51,7 @@ instance.interceptors.response.use(
         if (error.response.status) {            
             switch (error.response.status) {                
                 case 401:                    
+                    localStorage.clear();                    
                     message.error("relogin")
                     // router.replace({                        
                     //        path: '/login',                        
@@ -72,7 +79,7 @@ instance.interceptors.response.use(
     }
 );
 
-
+instance.interceptors.response.use(result => result.data);
 
 export {
   axios,
