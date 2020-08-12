@@ -73,10 +73,7 @@ import AddArticle from "./article/add"
 import ListUser from "./user/index"
 import {UpdateUser,AddUser} from "./user/add"
 
-function onChange(date, dateString) {
-      console.log(date, dateString);
-      message.info(dateString)
-}
+
 
 const Links=()=>{
     const links=[
@@ -91,7 +88,7 @@ const Links=()=>{
                  <Timeline>
                  {links.map((x,i)=>(
                     <Timeline.Item color="green">
-                        <a href={x.url} targe="_blank" > {x.name} </a>
+                        <a href={x.url} target="_blank" > {x.name} </a>
                     </Timeline.Item>
                  ))}
                  </Timeline>
@@ -101,6 +98,25 @@ const Links=()=>{
 }
 
 
+const Pick=()=>{
+     function onChange(date, dateString) {
+          console.log(date, dateString);
+          message.info(dateString)
+    }
+
+    return (
+            <Row align="center">
+              <Space direction="vertical">
+                <DatePicker onChange={onChange} />
+              </Space>
+            </Row>
+    )
+}
+
+
+
+
+
 
 export default () => {
 
@@ -108,6 +124,7 @@ export default () => {
             <div>
                  <h1 className={styles.title}>hello</h1>
 
+              <Pick />
               <Links />
 
               <ListUser />
@@ -119,9 +136,6 @@ export default () => {
               <AddArticle />
 
               <Divider/>
-              <Space direction="vertical">
-                <DatePicker onChange={onChange} />
-              </Space>
 
             </div>
 
