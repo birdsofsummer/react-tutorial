@@ -105,7 +105,7 @@ const Pick=()=>{
     }
 
     return (
-            <Row align="center">
+            <Row align="center" gutter={[16, 16]}>
               <Space direction="vertical">
                 <DatePicker onChange={onChange} />
               </Space>
