@@ -181,7 +181,7 @@ export default class ListUser extends React.Component {
                     onClick={
                         ()=>user.del(item.email)
                                 .then(x=>{
-                                        message.success("del sucess")
+                                        message.success("del %s sucess",Object.values(item.name).join(' '))
                                         const data = this.state.data
                                         let data1= data.filter(d=>d.email!=item.email)
                                         console.log(1111111111,data,data1)
