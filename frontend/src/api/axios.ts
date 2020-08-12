@@ -51,7 +51,7 @@ instance.interceptors.response.use(
         }    
     },
     error => {        
-        if (error.response.status) {            
+        if (error?.response?.status) {            
             switch (error.response.status) {                
                 case 401:                    
                     localStorage.clear();                    

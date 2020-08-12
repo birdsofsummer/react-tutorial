@@ -1,0 +1,34 @@
+{
+  "results": [
+    {
+      "gender": "male",
+      "name": {
+        "title": "Mr",
+        "first": "Sergio",
+        "last": "Moreno"
+      },
+      "email": "sergio.moreno@example.com",
+      "nat": "ES"
+    },
+    {
+      "gender": "male",
+      "name": {
+        "title": "Mr",
+        "first": "Idavide",
+        "last": "Cavalcanti"
+      },
+      "email": "idavide.cavalcanti@example.com",
+      "nat": "BR"
+    },
+    {
+      "gender": "male",
+      "name": {
+        "title": "Mr",
+        "first": "Aaron",
+        "last": "Hill"
+      },
+      "email": "aaron.hill@example.com",
+      "nat": "IE"
+    }
+  ]
+}

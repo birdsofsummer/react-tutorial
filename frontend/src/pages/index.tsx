@@ -1,10 +1,5 @@
 import React from 'react';
 import styles from './index.less';
-
-import Add from "./article/add"
-
-
-
 import {
     Affix,
     Anchor,
@@ -74,6 +69,11 @@ import {
 }  from 'antd'
 
 
+import AddArticle from "./article/add"
+import ListUser from "./user/index"
+
+
+
 function onChange(date, dateString) {
       console.log(date, dateString);
       message.info(dateString)
@@ -85,9 +85,17 @@ export default () => {
     <div>
       <h1 className={styles.title}>hello</h1>
 
+
+      <ListUser />
+
       <Divider/>
 
-      <Add />
+      <AddArticle />
+
+      <Divider/>
+
+
+
       <Space direction="vertical">
         <DatePicker onChange={onChange} />
       </Space>
