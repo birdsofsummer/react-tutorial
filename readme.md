@@ -2,7 +2,8 @@
 
 + [antd](https://ant.design/components/overview-cn/)
 + [umi](https://umijs.org/docs/getting-started#change-setting)
-+ [mobx-react](https://github.com/mobxjs/mobx-react)
++ [mobx-react](https://github.com/mobxjs/mobx-react) 
++ [mobx-doc](https://mobx.js.org/README.html)
 + [wangeditor](https://github.com/wangfupeng1988/wangEditor/blob/master/example/demo/in-react/src/App.js)
 + [axios](https://www.npmjs.com/package/axios)
 
@@ -15,9 +16,12 @@
 cnpm i umi -g
 npx @umijs/create-umi-app
 cnpm i
+
 cnpm install antd --save
 cnpm install wangeditor --save
 cnpm install axios --save
+cnpm install mobx --save
+cnpm install mobx-react --save
 
 npm run start
 

@@ -98,11 +98,17 @@ import {
 
 }  from 'antd'
 
-
-
+import { observer } from "mobx-react"
+import store  from '@/store/user'
 import user from "@/api/user"
+
+
+
+
 const count = 3;
 
+
+@observer
 export default class ListUser extends React.Component {
 
   state = {
@@ -113,7 +119,7 @@ export default class ListUser extends React.Component {
   };
 
   componentDidMount() {
-
+    console.log(this.props)
     user.list(count).then(res => {
 
       this.setState({

@@ -25,6 +25,7 @@
     "@umijs/test": "^3.2.14",
     "axios": "^0.19.2",
     "lint-staged": "^10.0.7",
+    "mobx": "^5.15.5",
     "mobx-react": "^6.2.5",
     "prettier": "^1.19.1",
     "react": "^16.12.0",
