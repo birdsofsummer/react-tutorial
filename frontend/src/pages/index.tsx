@@ -71,7 +71,7 @@ import {
 
 import AddArticle from "./article/add"
 import ListUser from "./user/index"
-
+import {UpdateUser,AddUser} from "./user/add"
 
 
 function onChange(date, dateString) {
@@ -88,8 +88,12 @@ export default () => {
 
       <ListUser />
 
+
       <Divider/>
 
+      <UpdateUser />
+ 
+      <Divider/>
       <AddArticle />
 
       <Divider/>
