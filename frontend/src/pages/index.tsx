@@ -78,29 +78,47 @@ function onChange(date, dateString) {
       message.info(dateString)
 }
 
+const Links=()=>{
+    const links=[
+      {name:"umi",url:"https://umijs.org/docs/getting-started#change-setting"},
+      {name:"antd",url:"https://ant.design/components/overview-cn/"},
+      {name:"mobx",url:"https://mobx.js.org/README.html"},
+      {name:"editor",url:"https://github.com/wangfupeng1988/wangEditor/blob/master/example/demo/in-react"},
+
+    ]
+    return (
+               <Row align="center">
+                 <Timeline>
+                 {links.map((x,i)=>(
+                    <Timeline.Item color="green">
+                        <a href={x.url} targe="_blank" > {x.name} </a>
+                    </Timeline.Item>
+                 ))}
+                 </Timeline>
+               </Row>
+          )
+
+}
+
+
+
 export default () => {
 
   return (
-
-
             <div>
-              <h1 className={styles.title}>hello</h1>
+                 <h1 className={styles.title}>hello</h1>
 
+              <Links />
 
               <ListUser />
 
-
               <Divider/>
-
               <UpdateUser />
-         
+
               <Divider/>
               <AddArticle />
 
               <Divider/>
-
-
-
               <Space direction="vertical">
                 <DatePicker onChange={onChange} />
               </Space>
