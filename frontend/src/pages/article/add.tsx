@@ -1,9 +1,11 @@
 import {Wang}  from "@/components/wang"
 
 import {
-    get_article,
-    add_article,
-}  from "@/api"
+    find,
+    list,
+    del,
+    add,
+}  from "@/api/article"
 
 import {
     Affix,
@@ -74,8 +76,8 @@ import {
 }  from 'antd'
 
 
-function add(c=""){
-    add_article({data:c})
+function add1(c=""){
+    add({data:c})
     .then(x=>{
         console.log('zzzzzzzzz',x)
         message.success("submit success")
@@ -90,8 +92,8 @@ function say(x=""){
 
 const Add=()=>(
       <Wang 
-        init={get_article}
-        save={add}
+        init={find}
+        save={add1}
         debug={true}
         change={say}
       />

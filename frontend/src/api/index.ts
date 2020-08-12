@@ -1,14 +1,10 @@
-import {
-  instance, 
-} from "./axios"
+import article from "./article"
 
-
-
-const get_article=(id=1)=> instance.get('article/'+id)
-const add_article=(c={})=> instance.post("article",c)
-
-export {
-    get_article,
-    add_article,
+export default{
+   article,
 }
+
+
+
+
 

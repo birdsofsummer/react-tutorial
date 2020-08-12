@@ -1,9 +1,9 @@
-import {Wang}  from "@/components/wang"
-
 import {
-    get_article,
-    add_article,
-}  from "@/api"
+    find,
+    add,
+    del,
+    list,
+}  from "@/api/article"
 
 import {
     Affix,
@@ -74,33 +74,4 @@ import {
 }  from 'antd'
 
 
-function add(c=""){
-    add_article({data:c})
-    .then(x=>{
-        message.success("submit success")
-    }).catch(e=>{
-        message.error("submit fail")
-    })
-}
 
-function say(x=""){
-    console.log("father recv:",x)
-}
-
-const Add=()=>(
-      <Wang 
-        init={get_article}
-        save={add}
-        debug={true}
-        change={say}
-      />
-)
-
-
-
-
-
-
-
-
-export {Add}

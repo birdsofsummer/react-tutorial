@@ -8,6 +8,9 @@ import {
 //https://httpbin.org/get
 //https://httpbin.org/post
 
+
+const now=()=>new Date().getTime()
+
 const instance = axios.create({
       baseURL: '/api/',
       timeout: 1000,
@@ -82,6 +85,7 @@ instance.interceptors.response.use(
 instance.interceptors.response.use(result => result.data);
 
 export {
-  axios,
-  instance, 
+    axios,
+    now,
+    instance, 
 }

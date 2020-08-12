@@ -123,9 +123,10 @@ const Wang=(props, ref)=>{
 
             init()
             .then(x=>{
-                //let d=x.data 
-                let d="dddd"  //假的
-                console.log('get article 1 success',d)
+                console.log('get article 1 success',x)
+                // { ok: true, data: "hello", msg: "ok" }
+                let d=x.data 
+               // let d="dddd"  //假的
                 setc(d)
                 editor.txt.html(d)
                 change(d)
