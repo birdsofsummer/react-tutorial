@@ -200,14 +200,14 @@ export default class ListUser extends React.Component {
             ]}
           >
             <Skeleton avatar title={false} loading={item.loading} active>
-              <List.Item.Meta
-                avatar={
-                  <Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />
-                }
-                title={<a href="https://github.com/birdsofsummer/react-tutorial">{item.name.last}</a>}
-                description="cccc"
-              />
-              <div>content</div>
+                  <List.Item.Meta
+                    avatar={
+                      <Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />
+                    }
+                    title={<a href="https://github.com/birdsofsummer/react-tutorial" target="_blank">{item.name.last}</a>}
+                    description="cccc"
+                  />
+                  <div>{item.email}</div>
             </Skeleton>
           </List.Item>
 
